@@ -23,7 +23,6 @@ const state = {
         button: document.getElementById("next-duel")
     }
 };
-
 const pathImages = "../src/assets/icons/";
 
 const cardData = [
@@ -168,8 +167,7 @@ async function resetDuel() {
 
 async function playAudio(status) {
     const audio = new Audio(`../src/assets/audios/${status}.wav`);
-    
-    try {
+        try {
         audio.play();
         
     } catch {}
@@ -180,6 +178,7 @@ function init() {
     drawCards(5, state.playerSides.player1);
     drawCards(5, state.playerSides.computer);
     const bgm = document.getElementById("bgm");
+    bgm.volume=0.2;
     bgm.play();
 }
 
